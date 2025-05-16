@@ -8,6 +8,7 @@ login_manager = LoginManager()
 login_manager.login_view = None
 
 def create_app():
+    
     app = Flask(__name__)
     
     app.config['SECRET_KEY'] = 'my_key'    
@@ -16,6 +17,8 @@ def create_app():
     app.config['SESSION_COOKIE_SAMESITE'] = 'None' 
     app.config['SESSION_COOKIE_SECURE'] = True
     
+    
+
     db.init_app(app)
     login_manager.init_app(app)
     CORS(app, supports_credentials=True)
